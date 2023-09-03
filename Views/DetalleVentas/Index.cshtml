@@ -10,6 +10,17 @@
 <p>
     <a asp-action="Create">Create New</a>
 </p>
+
+<form class="form-inline" asp-controller="DetalleVentas" asp-action="Index">
+    <div class="form-row">
+        <div class="form-group col-auto">
+            <label for="filter" class="sr-only">Buscar</label>
+            <input type="text" class="form-control" name="filter" value="" placeholder="Buscar">
+            <input type="submit" class="btn btn-secondary" value="Buscar">
+
+        </div>
+    </div>
+</form>
 <table class="table">
     <thead>
         <tr>
