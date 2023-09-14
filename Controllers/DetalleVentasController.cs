@@ -58,8 +58,8 @@ namespace Tienda.Controllers
         // GET: DetalleVentas/Create
         public IActionResult Create()
         {
-            ViewData["ProductoId"] = new SelectList(_context.Productos, "ProductoId", "ProductoId");
-            ViewData["VentaId"] = new SelectList(_context.Ventas, "VentaId", "VentaId");
+            ViewData["ProductoId"] = new SelectList(_context.Productos, "ProductoId", "NombreProducto");
+            ViewData["VentaId"] = new SelectList(_context.Ventas, "VentaId", "Factura");
             return View();
         }
 
@@ -76,8 +76,8 @@ namespace Tienda.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["ProductoId"] = new SelectList(_context.Productos, "ProductoId", "ProductoId", detalleVenta.ProductoId);
-            ViewData["VentaId"] = new SelectList(_context.Ventas, "VentaId", "VentaId", detalleVenta.VentaId);
+            ViewData["ProductoId"] = new SelectList(_context.Productos, "ProductoId", "NombreProducto", detalleVenta.ProductoId);
+            ViewData["VentaId"] = new SelectList(_context.Ventas, "VentaId", "Factura", detalleVenta.VentaId);
             return View(detalleVenta);
         }
 
@@ -94,8 +94,8 @@ namespace Tienda.Controllers
             {
                 return NotFound();
             }
-            ViewData["ProductoId"] = new SelectList(_context.Productos, "ProductoId", "ProductoId", detalleVenta.ProductoId);
-            ViewData["VentaId"] = new SelectList(_context.Ventas, "VentaId", "VentaId", detalleVenta.VentaId);
+            ViewData["ProductoId"] = new SelectList(_context.Productos, "ProductoId", "NombreProducto", detalleVenta.ProductoId);
+            ViewData["VentaId"] = new SelectList(_context.Ventas, "VentaId", "Factura", detalleVenta.VentaId);
             return View(detalleVenta);
         }
 
@@ -131,8 +131,8 @@ namespace Tienda.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["ProductoId"] = new SelectList(_context.Productos, "ProductoId", "ProductoId", detalleVenta.ProductoId);
-            ViewData["VentaId"] = new SelectList(_context.Ventas, "VentaId", "VentaId", detalleVenta.VentaId);
+            ViewData["ProductoId"] = new SelectList(_context.Productos, "ProductoId", "NombreProducto", detalleVenta.ProductoId);
+            ViewData["VentaId"] = new SelectList(_context.Ventas, "VentaId", "Factura", detalleVenta.VentaId);
             return View(detalleVenta);
         }
 

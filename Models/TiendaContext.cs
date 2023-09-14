@@ -1,10 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
 namespace Tienda.Models;
 
-public partial class TiendaContext : DbContext
+public partial class TiendaContext : IdentityDbContext
 {
     public TiendaContext()
     {
@@ -23,9 +24,9 @@ public partial class TiendaContext : DbContext
 
     public virtual DbSet<Venta> Ventas { get; set; }
 
-    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
-        => optionsBuilder.UseSqlServer("Server=EMMANUEL-2021-U;Initial Catalog=Tienda;integrated security=True; TrustServerCertificate=True");
+    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder) { }
+//#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
+//        => optionsBuilder.UseSqlServer("Server=EMMANUEL-2021-U;Initial Catalog=Tienda;integrated security=True; TrustServerCertificate=True");
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
@@ -49,6 +50,7 @@ public partial class TiendaContext : DbContext
             entity.Property(e => e.Telefono)
                 .HasMaxLength(50)
                 .IsUnicode(false);
+            base.OnModelCreating(modelBuilder);
         });
 
         modelBuilder.Entity<DetalleVenta>(entity =>

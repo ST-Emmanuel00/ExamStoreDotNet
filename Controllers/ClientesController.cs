@@ -19,6 +19,7 @@ namespace Tienda.Controllers
         }
 
         // GET: Clientes
+
         public async Task<IActionResult> Index()
         {
             return _context.Clientes != null ?

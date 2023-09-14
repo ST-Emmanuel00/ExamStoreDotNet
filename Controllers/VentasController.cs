@@ -58,7 +58,7 @@ namespace Tienda.Controllers
         // GET: Ventas/Create
         public IActionResult Create()
         {
-            ViewData["ClienteId"] = new SelectList(_context.Clientes, "ClienteId", "ClienteId");
+            ViewData["ClienteId"] = new SelectList(_context.Clientes, "ClienteId", "NombreCliente");
             return View();
         }
 
@@ -75,7 +75,7 @@ namespace Tienda.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["ClienteId"] = new SelectList(_context.Clientes, "ClienteId", "ClienteId", venta.ClienteId);
+            ViewData["ClienteId"] = new SelectList(_context.Clientes, "ClienteId", "NombreCliente", venta.ClienteId);
             return View(venta);
         }
 
@@ -92,7 +92,7 @@ namespace Tienda.Controllers
             {
                 return NotFound();
             }
-            ViewData["ClienteId"] = new SelectList(_context.Clientes, "ClienteId", "ClienteId", venta.ClienteId);
+            ViewData["ClienteId"] = new SelectList(_context.Clientes, "ClienteId", "NombreCliente", venta.ClienteId);
             return View(venta);
         }
 
@@ -128,7 +128,7 @@ namespace Tienda.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["ClienteId"] = new SelectList(_context.Clientes, "ClienteId", "ClienteId", venta.ClienteId);
+            ViewData["ClienteId"] = new SelectList(_context.Clientes, "ClienteId", "NombreCliente", venta.ClienteId);
             return View(venta);
         }
 

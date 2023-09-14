@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Ingenieria ⚠\\Desktop\\SHOP.NET\\Tienda\\Tienda.csproj": {}
+    "C:\\Users\\Ingenieria ⚠\\Desktop\\.NET\\Tienda\\Tienda.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Ingenieria ⚠\\Desktop\\SHOP.NET\\Tienda\\Tienda.csproj": {
+    "C:\\Users\\Ingenieria ⚠\\Desktop\\.NET\\Tienda\\Tienda.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Ingenieria ⚠\\Desktop\\SHOP.NET\\Tienda\\Tienda.csproj",
+        "projectUniqueName": "C:\\Users\\Ingenieria ⚠\\Desktop\\.NET\\Tienda\\Tienda.csproj",
         "projectName": "Tienda",
-        "projectPath": "C:\\Users\\Ingenieria ⚠\\Desktop\\SHOP.NET\\Tienda\\Tienda.csproj",
+        "projectPath": "C:\\Users\\Ingenieria ⚠\\Desktop\\.NET\\Tienda\\Tienda.csproj",
         "packagesPath": "C:\\Users\\Ingenieria ⚠\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Ingenieria ⚠\\Desktop\\SHOP.NET\\Tienda\\obj\\",
+        "outputPath": "C:\\Users\\Ingenieria ⚠\\Desktop\\.NET\\Tienda\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Ingenieria ⚠\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -40,6 +40,14 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[6.0.21, )"
+            },
+            "Microsoft.AspNetCore.Identity.UI": {
+              "target": "Package",
+              "version": "[6.0.21, )"
+            },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
               "version": "[7.0.10, )"
